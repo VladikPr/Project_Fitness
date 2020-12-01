@@ -26,7 +26,7 @@ const sendForm = () => {
                     }
 
                     if(element.value && element.name === 'name'){
-                        const boolean = element.value.trim()?true:false;
+                        const boolean = element.value.trim().length >=2?true:false;
                         invalidFields.push(boolean);
                         if(!boolean){
                             element.style.border = "solid red";
