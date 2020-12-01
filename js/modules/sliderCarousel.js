@@ -26,11 +26,12 @@ const sliderCarousel = () => {
     };
     
     const defaultSlides = () => {
+        const slides = document.querySelectorAll('.services-slider .slide');
+        slides.forEach(slide => slider.removeChild(slide));
         allSlides.forEach((slide,index) => index<getSlidesNum()?slider.appendChild(slide):"");
     };
 
     // Remove all slides and diplay number of slides depending on window width
-    slides.forEach(slide => slider.removeChild(slide));
     defaultSlides();
     
     // Next or previous slide
@@ -82,6 +83,12 @@ const sliderCarousel = () => {
             switchSlides(+1,slidesNum);
         }
     });
+
+    (function(){
+        window.addEventListener('resize', ()=>{
+            defaultSlides();
+        });
+    }());
     
 };
 
