@@ -16,10 +16,12 @@ const sendForm = () => {
                 inputs.forEach(element => {
                     // check if type tel
                     if(element.value && element.type === 'tel'){
-                        const boolean = /^\+?[78]\d{10}$/g.test(element.value);
+                        const boolean = /^\+?[\d]\s([-()\s]*\d){9,}$/.test(element.value);
                         invalidFields.push(boolean);
                         if(!boolean){
-                            alert('Введите правильный номер (10 цыфр)!');
+                            element.style.border = "solid red";
+                        }else{
+                            element.style.border = "";
                         }
                     }
 
@@ -27,8 +29,10 @@ const sendForm = () => {
                         const boolean = element.value.trim()?true:false;
                         invalidFields.push(boolean);
                         if(!boolean){
-                            alert('Поле не может быть пустым!');
+                            element.style.border = "solid red";
                             element.value = "";
+                        }else{
+                            element.style.border = "";
                         }
                     }
 
