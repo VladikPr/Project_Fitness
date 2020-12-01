@@ -72,7 +72,6 @@ const calculator = () => {
 
         let duration = getValue(time);
         let club = getValue(clubs);
-        console.log(club);
 
         if(!target.closest('.time, .club')){
             return;
