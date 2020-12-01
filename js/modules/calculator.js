@@ -60,9 +60,7 @@ const calculator = () => {
            
         } else if(club === 'schelkovo'){
             getData('./schelkovo.html',calculatePrice, duration);
-        }else{
-            priceTotal.textContent = 0;
-        }
+        }  
     };
 
     subDuration.addEventListener('change', (e) => {
