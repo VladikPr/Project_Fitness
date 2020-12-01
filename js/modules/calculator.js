@@ -89,6 +89,8 @@ const calculator = () => {
     });
 
     inputText.addEventListener('input', () => {
+        const time = document.querySelectorAll('.time input');
+        const clubs = document.querySelectorAll('#card_order input[name="club-name"]');
         let duration = getValue(time);
         let club = getValue(clubs);
         checkClub(club,duration);
